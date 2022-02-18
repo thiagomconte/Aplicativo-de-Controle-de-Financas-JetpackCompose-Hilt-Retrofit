@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">FinanceApp</string>
+
+    <!-- Login Screen -->
+    <string name="login">Login</string>
+    <string name="email">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="inform_password">Informe a senha!</string>
+    <string name="enter">Entrar</string>
+    <string name="create_account">Criar conta</string>
+    <string name="invalid_email">E-mail inválido!</string>
+
+    <!-- Register Screen -->
+    <string name="register">Registro</string>
+    <string name="confirm_register">Registrar</string>
+    <string name="back">Voltar</string>
+    <string name="name">Nome</string>
+    <string name="name_validator">Nome deve conter entre 3 e 30 caracteres!</string>
+    <string name="password_validator">A senha deve conter entre 8 e 20 caracteres!</string>
+
+    <!-- DateReference Screen -->
+    <string name="resumes">Resumos</string>
+    <string name="you_havent_added_resumes_yet">Você ainda não adicionou resumos.</string>
+    <string name="data_error">Não foi possível carregar os dados.</string>
+
+    <!-- FinancesDetails Screen -->
+    <string name="total">Total</string>
+
+    <!-- AddFinance Screen -->
+    <string name="new_resume">Novo Resumo</string>
+    <string name="description">Descrição</string>
+    <string name="value">Valor</string>
+    <string name="select_a_date">Selecione uma data</string>
+    <string name="select_a_date_error">Selecione uma data!</string>
+    <string name="select_a_type_error">Selecione um tipo!</string>
+    <string name="confirm">Confirmar</string>
+
+
+</resources>
