@@ -14,7 +14,7 @@
 
 ### Front-end
 
-Desenvolvido em Android utilizando Jetpack Compose, Hilt, Retrofit em uma arquitetura MVVM.
+Desenvolvido para Android utilizando Jetpack Compose, Hilt, Retrofit em uma arquitetura MVVM.
 
 ### Back-end
 
