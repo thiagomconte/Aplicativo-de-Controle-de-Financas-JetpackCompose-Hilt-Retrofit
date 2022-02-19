@@ -90,23 +90,23 @@ fun RegisterScreen(
                 .size(200.dp)
                 .align(CenterHorizontally)
         )
-        Text(
-            stringResource(id = R.string.register),
-            style = MaterialTheme.typography.h4,
-            fontFamily = FontFamily.Serif,
-            color = Color.White,
-            textAlign = TextAlign.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .border(
-                    width = 2.dp,
-                    shape = RoundedCornerShape(8.dp),
-                    color = Color.Black
-                )
-                .background(color = Color.Black)
-                .padding(vertical = 8.dp, horizontal = 32.dp)
-                .align(CenterHorizontally),
-        )
+//        Text(
+//            stringResource(id = R.string.register),
+//            style = MaterialTheme.typography.h4,
+//            fontFamily = FontFamily.Serif,
+//            color = Color.White,
+//            textAlign = TextAlign.Center,
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .border(
+//                    width = 2.dp,
+//                    shape = RoundedCornerShape(8.dp),
+//                    color = Color.Black
+//                )
+//                .background(color = Color.Black)
+//                .padding(vertical = 8.dp, horizontal = 32.dp)
+//                .align(CenterHorizontally),
+//        )
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
