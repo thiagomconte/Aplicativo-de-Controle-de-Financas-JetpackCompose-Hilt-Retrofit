@@ -1,8 +1,10 @@
 # Aplicativo simples para controle de finanças
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/44944936/154816912-e4bebeab-93ca-49fd-82b8-93a909034103.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="150" height="250"/>
-
-<img src="https://user-images.githubusercontent.com/44944936/154816913-180d4971-2755-4aaf-aaae-5101493bc6cc.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png"  width="150" height="250"/>
+  
+  
+<img src="https://user-images.githubusercontent.com/44944936/154870311-008c6a7e-99f0-4a59-b97f-80d36b3af123.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png"  width="150" height="250"/>
+  
+<img src="https://user-images.githubusercontent.com/44944936/154870310-9f07b3ef-3d95-4a3d-b689-e5a752ca4240.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="150" height="250"/>
 
 <img src="https://user-images.githubusercontent.com/44944936/154756533-8ea70876-0f3b-4c6d-be15-6aa01f1d8a7d.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png"  width="150" height="250"/>
 
