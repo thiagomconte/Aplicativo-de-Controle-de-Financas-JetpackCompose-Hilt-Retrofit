@@ -1,7 +1,6 @@
 package com.example.financeapp.features.user.login.components
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
@@ -13,16 +12,15 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.financeapp.R
@@ -84,145 +82,142 @@ fun LoginScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(horizontal = 16.dp, vertical = 16.dp),
+            .background(color = Color.Black),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Image(
+        Icon(
             imageVector = Icons.Default.AccountCircle,
             contentDescription = "Account icon",
             modifier = Modifier
                 .size(200.dp)
-                .align(CenterHorizontally)
+                .align(CenterHorizontally),
+            tint = Color.White
         )
-//        Text(
-//            stringResource(id = R.string.login),
-//            style = MaterialTheme.typography.h4,
-//            fontFamily = FontFamily.Serif,
-//            color = Color.White,
-//            textAlign = TextAlign.Center,
-//            modifier = Modifier
-//                .fillMaxWidth()
-//                .border(
-//                    width = 2.dp,
-//                    shape = RoundedCornerShape(8.dp),
-//                    color = Color.Black
-//                )
-//                .background(color = Color.Black)
-//                .padding(vertical = 8.dp, horizontal = 32.dp)
-//                .align(CenterHorizontally),
-//        )
-        OutlinedTextField(
-            modifier = Modifier.fillMaxWidth(),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-            label = {
-                RobotoTextRegular(text = stringResource(id = R.string.email))
-            },
-            shape = RoundedCornerShape(20.dp),
-            value = email.value,
-            onValueChange = {
-                email.value = it
-            },
-            colors = TextFieldDefaults.textFieldColors(
-                backgroundColor = Color.Transparent,
-                unfocusedLabelColor = Color.Black,
-                focusedLabelColor = Color.Black,
-                cursorColor = Color.Black,
-                focusedIndicatorColor = if (emailError.value) Color.Red else Color.Black,
-                unfocusedIndicatorColor = if (emailError.value) Color.Red else Color.Black,
-                textColor = Color.Black,
-            ),
-            textStyle = TextStyle(fontFamily = RobotoSerifLight)
-        )
-        if (emailError.value) {
-            ErrorText(text = stringResource(id = R.string.invalid_email))
-        }
-        OutlinedTextField(
-            modifier = Modifier.fillMaxWidth(),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            label = {
-                RobotoTextRegular(text = stringResource(id = R.string.password))
-            },
-            shape = RoundedCornerShape(20.dp),
-            value = password.value,
-            onValueChange = {
-                password.value = it
-            },
-            visualTransformation = if (passwordVisibility.value) VisualTransformation.None else PasswordVisualTransformation(),
-            trailingIcon = {
-                IconButton(onClick = {
-                    passwordVisibility.value = !passwordVisibility.value
-                }) {
-                    Icon(
-                        painter =
-                        if (passwordVisibility.value)
-                            painterResource(id = R.drawable.ic_visibility_black_24dp)
-                        else painterResource(
-                            id = R.drawable.ic_visibility_off_black_24dp
-                        ),
-                        contentDescription = ""
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .clip(RoundedCornerShape(16.dp, 16.dp, 0.dp, 0.dp))
+                .background(color = Color.White)
+                .padding(horizontal = 16.dp),
+        ) {
+            Column(
+                modifier = Modifier.padding(top = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                OutlinedTextField(
+                    modifier = Modifier.fillMaxWidth(),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                    label = {
+                        RobotoTextRegular(text = stringResource(id = R.string.email))
+                    },
+                    shape = RoundedCornerShape(20.dp),
+                    value = email.value,
+                    onValueChange = {
+                        email.value = it
+                    },
+                    colors = TextFieldDefaults.textFieldColors(
+                        backgroundColor = Color.Transparent,
+                        unfocusedLabelColor = Color.Black,
+                        focusedLabelColor = Color.Black,
+                        cursorColor = Color.Black,
+                        focusedIndicatorColor = if (emailError.value) Color.Red else Color.Black,
+                        unfocusedIndicatorColor = if (emailError.value) Color.Red else Color.Black,
+                        textColor = Color.Black,
+                    ),
+                    textStyle = TextStyle(fontFamily = RobotoSerifLight)
+                )
+                if (emailError.value) {
+                    ErrorText(text = stringResource(id = R.string.invalid_email))
+                }
+                OutlinedTextField(
+                    modifier = Modifier.fillMaxWidth(),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    label = {
+                        RobotoTextRegular(text = stringResource(id = R.string.password))
+                    },
+                    shape = RoundedCornerShape(20.dp),
+                    value = password.value,
+                    onValueChange = {
+                        password.value = it
+                    },
+                    visualTransformation = if (passwordVisibility.value) VisualTransformation.None else PasswordVisualTransformation(),
+                    trailingIcon = {
+                        IconButton(onClick = {
+                            passwordVisibility.value = !passwordVisibility.value
+                        }) {
+                            Icon(
+                                painter =
+                                if (passwordVisibility.value)
+                                    painterResource(id = R.drawable.ic_visibility_black_24dp)
+                                else painterResource(
+                                    id = R.drawable.ic_visibility_off_black_24dp
+                                ),
+                                contentDescription = ""
+                            )
+                        }
+                    },
+                    colors = TextFieldDefaults.textFieldColors(
+                        backgroundColor = Color.Transparent,
+                        unfocusedLabelColor = Color.Black,
+                        focusedLabelColor = Color.Black,
+                        cursorColor = Color.Black,
+                        focusedIndicatorColor = if (passwordError.value) Color.Red else Color.Black,
+                        unfocusedIndicatorColor = if (passwordError.value) Color.Red else Color.Black,
+                        textColor = Color.Black,
+                    ),
+                    textStyle = TextStyle(fontFamily = RobotoSerifLight)
+                )
+                if (passwordError.value) {
+                    ErrorText(text = stringResource(id = R.string.inform_password))
+                }
+                Button(
+                    onClick = {
+                        validate(email.value.text, password.value.text, onEmailError = {
+                            emailError.value = it
+                        }, onPasswordError = {
+                            passwordError.value = it
+                        }, onValidate = {
+                            viewModel.onEvent(
+                                LoginEvent.Login(
+                                    email.value.text,
+                                    password.value.text
+                                )
+                            )
+                            loading.value = true
+                        })
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp),
+                    shape = RoundedCornerShape(32.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = Color.Black, contentColor = Color.White
+                    )
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.enter),
+                        modifier = Modifier.padding(vertical = 4.dp),
+                        style = MaterialTheme.typography.h6
                     )
                 }
-            },
-            colors = TextFieldDefaults.textFieldColors(
-                backgroundColor = Color.Transparent,
-                unfocusedLabelColor = Color.Black,
-                focusedLabelColor = Color.Black,
-                cursorColor = Color.Black,
-                focusedIndicatorColor = if (passwordError.value) Color.Red else Color.Black,
-                unfocusedIndicatorColor = if (passwordError.value) Color.Red else Color.Black,
-                textColor = Color.Black,
-            ),
-            textStyle = TextStyle(fontFamily = RobotoSerifLight)
-        )
-        if (passwordError.value) {
-            ErrorText(text = stringResource(id = R.string.inform_password))
-        }
-        Button(
-            onClick = {
-                validate(email.value.text, password.value.text, onEmailError = {
-                    emailError.value = it
-                }, onPasswordError = {
-                    passwordError.value = it
-                }, onValidate = {
-                    viewModel.onEvent(
-                        LoginEvent.Login(
-                            email.value.text,
-                            password.value.text
-                        )
+                OutlinedButton(
+                    onClick = { onNavigate(UiEvent.Navigate(Constants.Routes.REGISTER)) },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp),
+                    shape = RoundedCornerShape(32.dp),
+                    border = BorderStroke(2.dp, Color.Black),
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = Color.White, contentColor = Color.Black
                     )
-                    loading.value = true
-                })
-            },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 16.dp),
-            shape = RoundedCornerShape(32.dp),
-            colors = ButtonDefaults.buttonColors(
-                backgroundColor = Color.Black, contentColor = Color.White
-            )
-        ) {
-            Text(
-                text = stringResource(id = R.string.enter),
-                modifier = Modifier.padding(vertical = 4.dp),
-                style = MaterialTheme.typography.h6
-            )
-        }
-        OutlinedButton(
-            onClick = { onNavigate(UiEvent.Navigate(Constants.Routes.REGISTER)) },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 16.dp),
-            shape = RoundedCornerShape(32.dp),
-            border = BorderStroke(2.dp, Color.Black),
-            colors = ButtonDefaults.buttonColors(
-                backgroundColor = Color.White, contentColor = Color.Black
-            )
-        ) {
-            Text(
-                text = stringResource(id = R.string.create_account),
-                modifier = Modifier.padding(vertical = 4.dp),
-                style = MaterialTheme.typography.h6
-            )
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.create_account),
+                        modifier = Modifier.padding(vertical = 4.dp),
+                        style = MaterialTheme.typography.h6
+                    )
+                }
+            }
         }
     }
 }
